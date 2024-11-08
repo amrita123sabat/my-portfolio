@@ -1,48 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Amrita Sabat</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact - Portfolio</title>
 </head>
 <body>
     <header>
-        <h1>Amrita Sabat</h1>
+        <a href="index.html" class="logo">Amrita Sabat</a>
         <nav>
-            <div class="hamburger">&#9776;</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <a href="index.html">Home</a>
+            <a href="education.html">Education</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html" class="active">Contact</a>
         </nav>
     </header>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p><strong>Email:</strong> <a href="mailto:amritasabat04@gmail.com">amritasabat04@gmail.com</a></p>
-        <p><strong>Phone:</strong> +46 727788212</p>
-
-        <form action="#">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br><br>
-
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4"></textarea><br><br>
-
-            <button type="submit">Send Message</button>
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-details">
+            <div class="detail-item">
+                <i class="fa-solid fa-envelope"></i>
+                <p>Email: <a href="mailto:your.email@example.com">amritasabat04@gmail.com</a></p>
+            </div>
+            <div class="detail-item">
+                <i class="fa-solid fa-phone"></i>
+                <p>Phone: <a href="tel:+1234567890">+46727788212</a></p>
+            </div>
+            <div class="detail-item">
+                <i class="fa-solid fa-map-marker-alt"></i>
+                <p>Location: Gothenburg, Sweden</p>
+            </div>
+        </div>
+        <form class="contact-form">
+            <h3>Get in Touch</h3>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Amrita Sabat | Gothenburg, Sweden</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

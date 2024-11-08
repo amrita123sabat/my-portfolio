@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amrita Sabat - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
 </head>
 <body>
     <header>
-        <h1>Amrita Sabat</h1>
+        <a href="#" class="logo">Amrita Sabat</a>
+
         <nav>
-            <div class="hamburger">&#9776;</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <a href="#" class="active"> Home</a>
+            <a href="skills.html" >Skills</a>
+            <a href="education.html" >Education</a>
+            <a href="projects.html" >Projects</a>
+            <a href="contact.html" >Contact</a>
         </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger icon (three lines) -->
+        </div>
     </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="image.jpg" alt="Profile Image">
 
-    <section id="profile">
-        <h2>Profile</h2>
-        <p>Dedicated software developer and tester with 4 years of experience in software development and testing using C, Java, Selenium, and Linux. Currently pursuing a Java Cloud Developer course at Jensen Yrkeshögskola, focusing on cloud technologies and AWS.</p>
+
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Amrita</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>A passionate cloud developer focused on Amazon Web Services and Java, I’ve always had an interest in coding, and dedicating time to it has fueled my enthusiasm for back-end development. My goal is to deepen my expertise and grow within this exciting field of cloud computing.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/amrita-sabat-194a9b208/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/amritasabat/?igsh=MTQ5Y3F4M3FiYnFqMQ%3D%3D&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
     </section>
-
     <footer>
-        <p>&copy; 2024 Amrita Sabat | Gothenburg, Sweden</p>
+        <p>© 2024 Amrita Sabat</p>
     </footer>
-
-    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+    
 </body>
 </html>
