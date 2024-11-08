@@ -412,6 +412,13 @@ span {
     width: 250px; /* Fixed width for contact items */
     text-align: left;
 }
+.contact a {
+    color: white; /* Set link color to white */
+    text-decoration: none; /* Remove underline if present */
+}
+.contact a:hover {
+    color: #cd10a1; /* Optional: Set hover color for links */
+}
 
 .detail-item i {
     font-size: 2.5rem; /* Icon size */
@@ -431,7 +438,7 @@ span {
     width: 100%;
     max-width: 400px; /* Max width for form inputs */
     padding: 1rem;
-    border: none;
+    border: 2px solid white; /* Set border color to white */
     border-radius: 5px;
     background-color: #000080;
     color: white;
