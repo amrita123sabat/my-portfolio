@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Portfolio Website</title>
+    <title>Amrita Sabat | Portfolio</title>
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Welcome to my Portfolio</a>
-
+        <a href="#" class="logo" aria-label="Welcome to Amrita's Portfolio">Welcome to my Portfolio</a>
         <nav>
-            <a href="#" class="active"> Home</a>
-            <a href="skills.html" >Skills</a>
-            <a href="education.html" >Education</a>
-            <a href="projects.html" >Projects</a>
-            <a href="contact.html" >Contact</a>
+            <a href="#" class="active">Home</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
         </nav>
-        <div class="hamburger" onclick="toggleMenu()">
-            &#9776; <!-- Hamburger icon (three lines) -->
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+            &#9776; <!-- Hamburger icon -->
         </div>
     </header>
     <section class="home">
         <div class="home-img">
-            <img src="image.jpg" alt="Profile Image">
-
-
+            <img src="image.jpg" alt="Profile Image of Amrita">
         </div>
         <div class="home-content">
             <h1>Hi, I am <span>Amrita</span></h1>
             <h3 class="typing-text">I am a <span></span></h3>
-            <p>A passionate cloud developer focused on Amazon Web Services and Java, I’ve always had an interest in coding, and dedicating time to it has fueled my enthusiasm for back-end development. My goal is to deepen my expertise and grow within this exciting field of cloud computing.</p>
+            <p>A passionate cloud developer focused on Amazon Web Services and Java...</p>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/amrita-sabat-194a9b208/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/amrita123sabat" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/amritasabat/?igsh=MTQ5Y3F4M3FiYnFqMQ%3D%3D&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/amrita-sabat-194a9b208/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/amrita123sabat" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/amritasabat/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </section>
     <footer>
@@ -44,10 +41,8 @@
     </footer>
     <script>
         function toggleMenu() {
-            const nav = document.querySelector('nav');
-            nav.classList.toggle('active');
+            document.querySelector('nav').classList.toggle('active');
         }
     </script>
-    
 </body>
 </html>
