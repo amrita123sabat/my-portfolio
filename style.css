@@ -30,7 +30,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 5%; /* Adjusted padding for smaller screens */
+    padding: 1rem 5%; 
     background-color: transparent;
     filter: drop-shadow(10px);
     display: flex;
@@ -54,7 +54,7 @@ header {
 nav a {
     font-size: 1.8rem;
     color: white;
-    margin-left: 2rem; /* Adjusted margin */
+    margin-left: 2rem;
     font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
@@ -72,11 +72,11 @@ nav a.active {
         display: none;
         top: 0;
         right: 0;
-        width: 70%; /* Increased width for mobile navigation */
+        width: 70%; 
         border-left: 3px solid #cd10a1;
         border-bottom: 3px solid #cd10a1;
         border-bottom-left-radius: 2rem;
-        padding: 1rem; /* Removed solid to avoid confusion */
+        padding: 1rem; 
         background-color: #000080;
         border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
     }
@@ -88,7 +88,7 @@ nav a.active {
     nav a {
         display: block;
         font-size: 2rem;
-        margin: 2rem 0; /* Adjusted for better spacing */
+        margin: 2rem 0; 
     }
 
     nav a:hover,
@@ -101,20 +101,20 @@ nav a.active {
 
 section {
     min-height: 100vh;
-    padding: 5rem 5% 5rem; /* Adjusted padding */
+    padding: 5rem 5% 5rem;
 }
 
 .home {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem; /* Adjusted for mobile */
+    gap: 4rem; 
     background-color: #000080;
-    flex-direction: column; /* Stack items on mobile */
+    flex-direction: column;
 }
 
 .home .home-content h1 {
-    font-size: 5rem; /* Adjusted size for mobile */
+    font-size: 5rem;
     font-weight: 700;
     line-height: 1.3;
 }
@@ -124,7 +124,7 @@ span {
 }
 
 .home-content h3 {
-    font-size: 3rem; /* Adjusted for mobile */
+    font-size: 3rem; 
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -139,8 +139,8 @@ span {
 
 .home-img img {
     position: relative;
-    width: 30vw; /* Adjusted width for responsiveness */
-    max-width: 400px; /* Optional: limit maximum width */
+    width: 30vw;
+    max-width: 400px; 
     border-radius: 50%;
     box-shadow: 0 0 25px solid #cd10a1;
     cursor: pointer;
@@ -162,7 +162,7 @@ span {
     border: 0.2rem solid #cd10a1;
     font-size: 2rem;
     border-radius: 50%;
-    margin: 1rem; /* Adjusted margin for mobile */
+    margin: 1rem; 
     transition: 0.3s ease;
     color: #cd10a1;
 }
@@ -176,7 +176,7 @@ span {
 
 .btn {
     display: inline-block;
-    padding: 1rem 2rem; /* Adjusted padding */
+    padding: 1rem 2rem;
     background-color: #000080;
     border-radius: 4rem;
     font-size: 1.6rem;
@@ -197,7 +197,7 @@ span {
 
 /* Typing Text */
 .typing-text {
-    font-size: 2rem; /* Adjusted size for mobile */
+    font-size: 2rem; 
     font-weight: 600;
     min-width: 280px;
 }
@@ -211,39 +211,9 @@ span {
     color: #cd10a1;
     animation: words 20s infinite;
 }
-
-.typing-text span::after {
-    content: "";
-    background-color: #000080;
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid black;
-    right: -8;
-    animation: cursor 0.6s infinite;
-}
-
-@keyframes cursor {
-    to {
-        border-left: 3px solid #cd10a1;
-    }
-}
-
-@keyframes words {
-    0%, 20% {
-        content: "Cloud Developer";
-    }
-    21%, 40% {
-        content: "Java Developer";
-    }
-    41%, 60% {
-        content: "Backend Developer";
-    }
-}
-
 /* Education Section Styling */
 .education {
-    margin-top: 6rem; /* Adjust this value to move the education section down */
+    margin-top: 6rem; 
 }
 
 .education-content {
@@ -277,13 +247,13 @@ span {
 }
 
 .projects {
-    margin-top: 6rem; /* Adjust space from header or previous sections */
+    margin-top: 6rem; 
 }
 
 .projects-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* Space between project items */
+    gap: 2rem; 
 }
 
 .project-item {
@@ -329,17 +299,17 @@ span {
 .project-message {
     margin-top: 2rem;
     padding: 1rem;
-    background-color: #000080; /* Same background color as project items */
+    background-color: #000080; 
     border-radius: 0.5rem;
-    border-left: 5px solid #cd10a1; /* Same color as project item border */
+    border-left: 5px solid #cd10a1; 
     font-size: 1.6rem;
-    color: white; /* Ensure text is readable */
+    color: white; 
 }
 
 /* Skills Section Styling */
 .skills {
     min-height: 100vh;
-    padding: 5rem 5% 5rem; /* Adjusted padding */
+    padding: 5rem 5% 5rem;
     background-color: #000080;
     color: white;
     margin-top: 6rem;
@@ -363,7 +333,7 @@ span {
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
-    width: 150px; /* Fixed width for skill items */
+    width: 150px; 
     transition: transform 0.3s ease;
 }
 
@@ -372,7 +342,7 @@ span {
 }
 
 .skill-item i {
-    font-size: 3rem; /* Icon size */
+    font-size: 3rem;
     color: #cd10a1;
     margin-bottom: 1rem;
 }
@@ -380,13 +350,13 @@ span {
 .skill-item h3 {
     font-size: 1.6rem;
     margin: 0;
-    color: #cd10a1; /* Text color */
+    color: #cd10a1; 
 }
 
 /* Contact Section Styling */
 .contact {
     min-height: 100vh;
-    padding: 5rem 5% 5rem; /* Adjusted padding */
+    padding: 5rem 5% 5rem; 
     background-color: #000080;
     color: white;
     text-align: center;
@@ -409,19 +379,19 @@ span {
     background-color: #000080;
     padding: 2rem;
     border-radius: 1rem;
-    width: 250px; /* Fixed width for contact items */
+    width: 250px; 
     text-align: left;
 }
 .contact a {
-    color: white; /* Set link color to white */
-    text-decoration: none; /* Remove underline if present */
+    color: white; 
+    text-decoration: none; 
 }
 .contact a:hover {
-    color: #cd10a1; /* Optional: Set hover color for links */
+    color: #cd10a1; 
 }
 
 .detail-item i {
-    font-size: 2.5rem; /* Icon size */
+    font-size: 2.5rem; 
     color: #cd10a1;
     margin-right: 1rem;
 }
@@ -436,9 +406,9 @@ span {
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    max-width: 400px; /* Max width for form inputs */
+    max-width: 400px; 
     padding: 1rem;
-    border: 2px solid white; /* Set border color to white */
+    border: 2px solid white; 
     border-radius: 5px;
     background-color: #000080;
     color: white;
@@ -463,30 +433,30 @@ span {
 /* Media Queries for Better Responsiveness */
 @media (max-width: 768px) {
     .home-content h3 {
-        font-size: 2.5rem; /* Smaller h3 font size */
+        font-size: 2.5rem; 
     }
 
     .home .home-content h1 {
-        font-size: 4rem; /* Smaller h1 font size */
+        font-size: 4rem; 
     }
 
     .education-item, .project-item, .detail-item {
-        width: 100%; /* Full width for items */
+        width: 100%; 
     }
 
     .contact-form input,
     .contact-form textarea {
-        max-width: 90%; /* Increase the maximum width */
+        max-width: 90%; 
     }
 }
 /* Hamburger Icon Styling */
 .hamburger {
-    display: none; /* Hidden by default */
+    display: none; 
     font-size: 3rem;
     color: white;
     cursor: pointer;
     position: relative;
-    z-index: 101; /* Ensure it stays above other elements */
+    z-index: 101; 
 }
 
 /* Show hamburger icon on smaller screens */
@@ -496,7 +466,7 @@ span {
     }
 
     nav {
-        display: none; /* Hide the nav menu by default on mobile */
+        display: none; 
         position: fixed;
         top: 0;
         right: 0;
@@ -506,7 +476,7 @@ span {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        z-index: 100; /* Ensure it overlays the content */
+        z-index: 100; 
         padding: 2rem 1rem;
         transition: all 0.3s ease;
     }
@@ -517,7 +487,7 @@ span {
     }
 
     nav.active {
-        display: flex; /* Display flex when active */
+        display: flex; 
     }
 }
 
