@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,34 +24,93 @@
         <div class="contact-details">
             <div class="detail-item">
                 <i class="fa-solid fa-envelope"></i>
-                <p>Email: <a href="mailto:your.email@example.com">amritasabat04@gmail.com</a></p>
+                <p>Email: <a href="mailto:amritasabat04@gmail.com">amritasabat04@gmail.com</a></p>
             </div>
             <div class="detail-item">
                 <i class="fa-solid fa-phone"></i>
-                <p>Phone: <a href="tel:+1234567890">+46727788212</a></p>
+                <p>Phone: <a href="tel:+46727788212">+46727788212</a></p>
             </div>
             <div class="detail-item">
                 <i class="fa-solid fa-map-marker-alt"></i>
                 <p>Location: Gothenburg, Sweden</p>
             </div>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" id="contactForm">
             <h3>Get in Touch</h3>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="button" class="btn" onclick="saveData()">Send Message</button>
         </form>
+        <div class="stored-data" aria-live="polite">
+            <h3>Saved Data</h3>
+            <p id="savedName">No name saved.</p>
+            <p id="savedEmail">No email saved.</p>
+            <p id="savedMessage">No message saved.</p>
+            <button type="button" class="btn clear-btn" onclick="clearLocalStorage()">Clear Saved Data</button>
+        </div>
     </section>
     <footer>
         <p>© 2024 Amrita Sabat</p>
     </footer>
 
     <script>
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('active');
-        }
-    </script>
+        // Save form data to localStorage
+        function saveData() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
 
+            if (name && email && message) {
+                localStorage.setItem('contactName', name);
+                localStorage.setItem('contactEmail', email);
+                localStorage.setItem('contactMessage', message);
+                alert('Your message has been saved!');
+                displaySavedData();
+                clearForm(); // Clear form after saving
+            } else {
+                // Highlight empty fields
+                if (!name) document.getElementById('name').style.border = '1px solid red';
+                if (!email) document.getElementById('email').style.border = '1px solid red';
+                if (!message) document.getElementById('message').style.border = '1px solid red';
+
+                alert('Please fill out all fields before submitting.');
+            }
+        }
+
+        // Display saved data from localStorage
+        function displaySavedData() {
+            const savedName = localStorage.getItem('contactName');
+            const savedEmail = localStorage.getItem('contactEmail');
+            const savedMessage = localStorage.getItem('contactMessage');
+
+            document.getElementById('savedName').textContent = savedName ? `Name: ${savedName}` : 'No name saved.';
+            document.getElementById('savedEmail').textContent = savedEmail ? `Email: ${savedEmail}` : 'No email saved.';
+            document.getElementById('savedMessage').textContent = savedMessage ? `Message: ${savedMessage}` : 'No message saved.';
+        }
+
+        // Clear form fields
+        function clearForm() {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+            // Reset field borders
+            document.getElementById('name').style.border = '';
+            document.getElementById('email').style.border = '';
+            document.getElementById('message').style.border = '';
+        }
+
+        // Clear localStorage data
+        function clearLocalStorage() {
+            localStorage.clear();
+            displaySavedData();
+            alert('All saved data has been cleared.');
+        }
+
+        // Load saved data on page load
+        window.onload = function() {
+            displaySavedData();
+        };
+    </script>
 </body>
 </html>

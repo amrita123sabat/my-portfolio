@@ -427,7 +427,30 @@ span {
 }
 
 .contact-form button:hover {
+    background: #555;
     background-color: #cd10a1;
+}
+.stored-data {
+    margin-top: 20px; /* Adjust this value to position the rectangle further below */
+    padding: 15px;
+    background: #cd10a1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+.stored-data p {
+    margin: 5px 0;
+}
+
+.clear-btn {
+    background: #e74c3c;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.clear-btn:hover {
+    background: #c0392b;
 }
 
 /* Media Queries for Better Responsiveness */
