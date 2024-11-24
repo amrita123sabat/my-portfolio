@@ -57,37 +57,65 @@
     <script>
         // Save form data to localStorage
         function saveData() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-            if (name && email && message) {
-                localStorage.setItem('contactName', name);
-                localStorage.setItem('contactEmail', email);
-                localStorage.setItem('contactMessage', message);
-                alert('Your message has been saved!');
-                displaySavedData();
-                clearForm(); // Clear form after saving
-            } else {
-                // Highlight empty fields
-                if (!name) document.getElementById('name').style.border = '1px solid red';
-                if (!email) document.getElementById('email').style.border = '1px solid red';
-                if (!message) document.getElementById('message').style.border = '1px solid red';
+    if (name && email && message) {
+        // Retrieve existing data from localStorage
+        let contactData = JSON.parse(localStorage.getItem('contacts')) || [];
 
-                alert('Please fill out all fields before submitting.');
-            }
-        }
+        // Add the new data to the array
+        contactData.push({ name, email, message });
+
+        // Save the updated array back to localStorage
+        localStorage.setItem('contacts', JSON.stringify(contactData));
+
+        alert('Your message has been saved!');
+        displaySavedData();
+        clearForm(); // Clear form after saving
+    } else {
+        // Highlight empty fields
+        if (!name) document.getElementById('name').style.border = '1px solid red';
+        if (!email) document.getElementById('email').style.border = '1px solid red';
+        if (!message) document.getElementById('message').style.border = '1px solid red';
+
+        alert('Please fill out all fields before submitting.');
+    }
+}
 
         // Display saved data from localStorage
         function displaySavedData() {
-            const savedName = localStorage.getItem('contactName');
-            const savedEmail = localStorage.getItem('contactEmail');
-            const savedMessage = localStorage.getItem('contactMessage');
+    // Retrieve existing data from localStorage
+    const contactData = JSON.parse(localStorage.getItem('contacts')) || [];
 
-            document.getElementById('savedName').textContent = savedName ? `Name: ${savedName}` : 'No name saved.';
-            document.getElementById('savedEmail').textContent = savedEmail ? `Email: ${savedEmail}` : 'No email saved.';
-            document.getElementById('savedMessage').textContent = savedMessage ? `Message: ${savedMessage}` : 'No message saved.';
-        }
+    const savedDataContainer = document.querySelector('.stored-data');
+    savedDataContainer.innerHTML = '<h3>Saved Data</h3>'; // Clear previous content
+
+    if (contactData.length > 0) {
+        contactData.forEach((contact, index) => {
+            const contactElement = document.createElement('div');
+            contactElement.classList.add('contact-entry');
+            contactElement.innerHTML = `
+                <p><strong>Entry ${index + 1}</strong></p>
+                <p>Name: ${contact.name}</p>
+                <p>Email: ${contact.email}</p>
+                <p>Message: ${contact.message}</p>
+            `;
+            savedDataContainer.appendChild(contactElement);
+        });
+    } else {
+        savedDataContainer.innerHTML += '<p>No saved data available.</p>';
+    }
+
+    // Add a "Clear All" button
+    const clearButton = document.createElement('button');
+    clearButton.textContent = 'Clear Saved Data';
+    clearButton.classList.add('btn', 'clear-btn');
+    clearButton.onclick = clearLocalStorage;
+    savedDataContainer.appendChild(clearButton);
+}
+
 
         // Clear form fields
         function clearForm() {
